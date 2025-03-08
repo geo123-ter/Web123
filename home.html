@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEBSITE</title>
+    <title>GEov</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" 
     integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -52,7 +52,63 @@
                         <a href="https://www.linkedin.com" class="fa fa-linkedin"></a>
                     </div>
 
+                    <div class="chat-box">
+                        <h3>Chat with us</h3>
+                        <div class="chat-content">
+                            <div class="messages">
+                                <!-- Messages will appear here -->
+                            </div>
+                            <input type="text" id="chat-input" placeholder="Type your message...">
+                            <button id="send-btn">Send</button>
+                        </div>
+                    </div>
 
+                    <script>
+                        document.getElementById('send-btn').addEventListener('click', function() {
+                            var input = document.getElementById('chat-input');
+                            var message = input.value;
+                            if (message.trim() !== "") {
+                                var messageContainer = document.createElement('div');
+                                messageContainer.className = 'message';
+                                messageContainer.textContent = message;
+                                document.querySelector('.messages').appendChild(messageContainer);
+                                input.value = '';
+
+                                // Simulate a response from the website
+                                setTimeout(function() {
+                                    var responseContainer = document.createElement('div');
+                                    responseContainer.className = 'message response';
+                                    responseContainer.textContent = " i am geovani?";
+                                    document.querySelector('.messages').appendChild(responseContainer);
+                                }, 1000);
+                                setTimeout(function() {
+                                    var responseContainer = document.createElement('div');
+                                    responseContainer.className = 'message response';
+                                    responseContainer.textContent = "How can we assist you today?";
+                                    document.querySelector('.messages').appendChild(responseContainer);
+                                }, 3000);
+
+                                setTimeout(function() {
+                                    var responseContainer = document.createElement('div');
+                                    responseContainer.className = 'message response';
+                                    responseContainer.textContent = "Please tell me.";
+                                    document.querySelector('.messages').appendChild(responseContainer);
+                                }, 2000);
+                                
+                            }
+                                setTimeout(function() {
+                                    var responseContainer = document.createElement('div');
+                                    responseContainer.className = 'message response';
+                                    responseContainer.textContent = "Is there anything else you need help with?";
+                                    document.querySelector('.messages').appendChild(responseContainer);
+                                }, 4000);
+                            }
+                            );
+                        </script>
+                    
+
+                       
+                   
                 </div>
             </footer>
           
